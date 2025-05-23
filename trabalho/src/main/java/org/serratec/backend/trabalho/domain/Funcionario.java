@@ -1,6 +1,5 @@
 package org.serratec.backend.trabalho.domain;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -12,17 +11,17 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Funcionario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotBlank(message="Preencha o nome")
-	@Column(nullable=false)
+
+	@NotBlank(message = "Preencha o nome")
+	@Column(nullable = false)
 	private String nome;
-	
+
 	@Embedded
-	@Valid 
+	@Valid
 	private Endereco endereco;
 
 	public Long getId() {
@@ -48,8 +47,5 @@ public class Funcionario {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	
 
-	
 }
